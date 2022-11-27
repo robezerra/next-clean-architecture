@@ -1,9 +1,10 @@
+import { Cart } from '../../domain/entities/cart';
 import { CartGateway } from '../../domain/gateways/cart.gateway';
 
 export class ClearCartUseCase {
 	constructor(private cartGateway: CartGateway) {}
 
-	async execute() {
+	execute(): Cart {
 		const cart = this.cartGateway.get();
 
 		cart.clear();

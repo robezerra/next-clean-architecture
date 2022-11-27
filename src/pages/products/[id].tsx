@@ -4,7 +4,7 @@ import { CartContext } from '../../context/cart.provider';
 
 import { container, Registry } from '../../@core/infra/container-registry';
 import { GetProductUseCase } from '../../@core/application/product/get-product.use-case';
-import { ProductProps } from '../../@core/domain/entities/product';
+import { Product, ProductProps } from '../../@core/domain/entities/product';
 
 type ProductDetailPageProps = {
 	product: ProductProps;
@@ -13,13 +13,14 @@ type ProductDetailPageProps = {
 export const ProductDetailPage: NextPage<ProductDetailPageProps> = ({
 	product,
 }) => {
+	const productEntity = new Product({ ...product });
 	const cartContext = useContext(CartContext);
 
 	return (
 		<div>
-			<h3>{product.name}</h3>
-			<label>Preço:</label> {product.price}
-			<button onClick={() => cartContext.addProduct(product)}>
+			<h3>{productEntity.name}</h3>
+			<label>Preço:</label> {productEntity.price}
+			<button onClick={() => cartContext.addProduct(productEntity)}>
 				Adicionar no carrinho
 			</button>
 		</div>

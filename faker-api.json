@@ -103,6 +103,15 @@
       ],
       "credit_card_number": "11111",
       "id": 2
+    },
+    {
+      "products": [
+        {},
+        {},
+        {}
+      ],
+      "credit_card_number": "33333333",
+      "id": 3
     }
   ]
 }

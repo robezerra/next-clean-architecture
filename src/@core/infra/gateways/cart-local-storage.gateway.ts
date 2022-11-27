@@ -1,6 +1,8 @@
+import { injectable } from 'inversify';
 import { Cart } from '../../domain/entities/cart';
 import { CartGateway } from '../../domain/gateways/cart.gateway';
 
+@injectable()
 export class CartLocalStorageGateway implements CartGateway {
 	private readonly CART_KEY = 'cart';
 	get(): Cart {

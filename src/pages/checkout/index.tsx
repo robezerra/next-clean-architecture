@@ -14,7 +14,9 @@ export const CheckoutPage: NextPage = () => {
 		const credit_card_number = event.currentTarget.credit_card_number.value;
 
 		const { data: order } = await http.post('orders', {
-			products: cartContext.products,
+			products: cartContext.cart.products.map((product) => ({
+				...product.props,
+			})),
 			credit_card_number,
 		});
 
@@ -25,7 +27,7 @@ export const CheckoutPage: NextPage = () => {
 		<div>
 			<h3>Meu carrinho</h3>
 			<ul>
-				{cartContext.products.map((product) => (
+				{cartContext.cart.products.map((product) => (
 					<li key={product.id}>
 						Produto {product.name} - {product.price}
 					</li>
