@@ -25,7 +25,7 @@ export class Cart {
 		return this.props.products.reduce((acc, product) => acc + product.price, 0);
 	}
 
-	get product() {
+	get products() {
 		return this.props.products;
 	}
 }
