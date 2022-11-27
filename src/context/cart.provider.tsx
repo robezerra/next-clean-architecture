@@ -5,7 +5,7 @@ import {
 	useEffect,
 	useState,
 } from 'react';
-import { AddProductInCartUseCase } from '../@core/application/cart/add-product-in-cart-use-case';
+import { AddProductInCartUseCase } from '../@core/application/cart/add-product-in-cart.use-case';
 import { ClearCartUseCase } from '../@core/application/cart/clear-cart.use-case';
 import { GetCartUseCase } from '../@core/application/cart/get-cart.use-case';
 import { RemoveProductFromCartUseCase } from '../@core/application/cart/remove-product-from-cart.use-case';
