@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { api } from '../../../utils/http';
+import { http } from '../../../@core/infra/http';
 import { Order } from '../../../utils/models';
 
 type CheckoutSuccessPageProps = {
@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const { id } = context.params || {};
-	const { data: order } = await api.get(`orders/${id}`);
+	const { data: order } = await http.get(`orders/${id}`);
 
 	return {
 		props: {

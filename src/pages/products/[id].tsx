@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart.provider';
 
-import { api } from '../../utils/http';
+import { http } from '../../@core/infra/http';
 import { Product } from '../../utils/models';
 
 type ProductDetailPageProps = {
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const { id } = context.params || {};
-	const { data: product } = await api.get(`products/${id}`);
+	const { data: product } = await http.get(`products/${id}`);
 
 	return {
 		props: {

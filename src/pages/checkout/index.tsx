@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { FormEvent, useContext } from 'react';
 import { CartContext } from '../../context/cart.provider';
-import { api } from '../../utils/http';
+import { http } from '../../@core/infra/http';
 
 export const CheckoutPage: NextPage = () => {
 	const cartContext = useContext(CartContext);
@@ -13,7 +13,7 @@ export const CheckoutPage: NextPage = () => {
 
 		const credit_card_number = event.currentTarget.credit_card_number.value;
 
-		const { data: order } = await api.post('orders', {
+		const { data: order } = await http.post('orders', {
 			products: cartContext.products,
 			credit_card_number,
 		});

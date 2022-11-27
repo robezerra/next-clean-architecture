@@ -16,6 +16,7 @@
 		"axios": "^1.2.0",
 		"eslint": "8.28.0",
 		"eslint-config-next": "13.0.5",
+		"inversify": "^6.0.1",
 		"json-server": "^0.17.1",
 		"next": "13.0.5",
 		"react": "18.2.0",
