@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"server": "json-server --port 8000 --watch faker-api.json"
+		"fake-api": "json-server --port 8000 --watch faker-api.json"
 	},
 	"dependencies": {
 		"@types/node": "18.11.9",
