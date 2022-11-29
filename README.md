@@ -6,12 +6,25 @@ Simulação de checkout utilizando o conceito de Clean Architecture aplicado ao 
 
 ## Como executar
 
+Primeiro, instale as depêndencias
 ```bash
 yarn install
+# OU
+npm install
+```
 
+Logo após, suba o servidor fake
+```
 yarn fake-api
+# OU
+npm run fake-api
+```
 
+E, então, rode o ambiente de desenvolvimento
+```
 yarn dev
+# OU
+npm run dev
 ```
 
 Acesse a aplicação em [http://localhost:3000](http://localhost:3000)
